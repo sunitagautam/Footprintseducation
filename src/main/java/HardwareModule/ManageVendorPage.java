@@ -104,10 +104,10 @@ public class ManageVendorPage extends BaseTest {
 	WebElement email_duplicacy;
 	@FindBy(id="vendor_pan-error")
 	WebElement vendorPan_error;
-// Edit 
+	// Edit 
 	@FindBy(xpath="//*[@id='tr-19']//td[15]//a[1]//span")
 	WebElement editIcon;
-	
+
 
 
 
@@ -117,11 +117,11 @@ public class ManageVendorPage extends BaseTest {
 	WebDriverWait wait;
 
 	public ManageVendorPage(WebDriver driver) {
-        this.driver = driver;
-        // Use Duration to specify the timeout
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Adjust timeout as needed
-        PageFactory.initElements(driver, this);
-    }
+		this.driver = driver;
+		// Use Duration to specify the timeout
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Adjust timeout as needed
+		PageFactory.initElements(driver, this);
+	}
 
 	public void OpenManageVendorPage() throws InterruptedException {
 		SupportModule.click();
@@ -151,14 +151,14 @@ public class ManageVendorPage extends BaseTest {
 	}
 
 	public void searchFunctionality() throws InterruptedException {
-	    searchBar.sendKeys("Amazon");
-	    Thread.sleep(500); // Consider using WebDriverWait here
-	    if (sResultfound.isDisplayed()) {
-	        System.out.println("Searched Vendor Name is found " + sResultfound.getText());
-	    } else {
-	    	
-	        System.out.println("Searched VendorName is not found."+sResultNotFound.getText());
-	    }
+		searchBar.sendKeys("Amazon");
+		Thread.sleep(500); // Consider using WebDriverWait here
+		if (sResultfound.isDisplayed()) {
+			System.out.println("Searched Vendor Name is found " + sResultfound.getText());
+		} else {
+
+			System.out.println("Searched VendorName is not found."+sResultNotFound.getText());
+		}
 	}
 
 	//SC_001_TC_003
@@ -301,10 +301,10 @@ public class ManageVendorPage extends BaseTest {
 		} else {
 			System.out.println("Message element not found.");
 		}
-		
+
 
 	}
-	
+
 	public void AddNewVendor_EmailformatValidations() throws InterruptedException {
 		addVendorBtn.click();
 		vendorEmail.sendKeys("sunita");
@@ -312,7 +312,7 @@ public class ManageVendorPage extends BaseTest {
 		submitBtn.click();
 		System.out.println("email format Validation Message :"+ vendorEmail_error.getText());
 	}
-	
+
 	public void AddNewvendor_EmailDuplicacy() {
 		addVendorBtn.click();
 		vendorName.sendKeys("Amazon VendorK");
@@ -338,7 +338,7 @@ public class ManageVendorPage extends BaseTest {
 		}
 
 	}
-	
+
 	public void AddNewvendor_PANValidation() {
 		addVendorBtn.click();
 		vendorName.sendKeys("Amazon VendorK");
@@ -348,7 +348,7 @@ public class ManageVendorPage extends BaseTest {
 		FWUtils.scrollDown();
 		submitBtn.click();
 		System.out.println("PAN Validation msg :"+vendorPan_error.getText());
-		}
+	}
 	//............................................................................................
 	//SC_001_TC_010
 	public void editVendor_func() {
@@ -370,102 +370,102 @@ public class ManageVendorPage extends BaseTest {
 		} else {
 			System.out.println("Message element not found.");
 		}
-		
+
 	}
 	//SC_001_TC_011  edit validations
-		public void EditVendor_MandatoryfieldValidations() {
-			editIcon.click();
-			vendorName.clear();
-			vendorComp.clear();
-			vproducts.clear();
-			FWUtils.scrollDown();
-			submitBtn.click();
-			System.out.println("Validation message without filling any field of form:"+ vendorName_error.getText());
-			System.out.println("Validation message without filling any field of form:"+ vendorComp_error.getText());
-			System.out.println("Validation message without filling any field of form:"+ vendorProd_error.getText());
+	public void EditVendor_MandatoryfieldValidations() {
+		editIcon.click();
+		vendorName.clear();
+		vendorComp.clear();
+		vproducts.clear();
+		FWUtils.scrollDown();
+		submitBtn.click();
+		System.out.println("Validation message without filling any field of form:"+ vendorName_error.getText());
+		System.out.println("Validation message without filling any field of form:"+ vendorComp_error.getText());
+		System.out.println("Validation message without filling any field of form:"+ vendorProd_error.getText());
+	}
+
+	public void EditVendor_MobileformatValidations() throws InterruptedException {
+		editIcon.click();
+		vendorMobile.clear();
+		vendorMobile.sendKeys("90651234");
+		FWUtils.scrollDown();
+		submitBtn.click();
+		System.out.println("Mobile Validation Message for less than 10 digits :"+ vendorMobile_error.getText());
+		System.out.println("warning for duplicacy:"+ vMobile_duplicate.getText());
+		vendorMobile.clear();
+		Thread.sleep(500);
+		vendorMobile.sendKeys("9876543211234569");
+		submitBtn.click();
+		System.out.println("Mobile Validation Message for More than 13 digits"+ vendorMobile_error.getText());
+		vendorMobile.clear();
+		Thread.sleep(500);
+	}
+
+	public void Editvendor_MobileDuplicacy() {
+		editIcon.click();
+		vendorMobile.clear();
+		vendorMobile.sendKeys("7503664514");
+		FWUtils.scrollDown();
+		submitBtn.click();
+		FWUtils.scrollUp();
+		WebElement mobileDuplicacyMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-warning"))); // Replace with actual selector
+		System.out.println("Duplicacy Validation message of mobile no:" +mobileDuplicacyMessage.getText());
+
+		// Use JavaScript to find the element
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement messageElement = (WebElement) js.executeScript("return document.querySelector('.alert-warning')");
+
+		if (messageElement != null) {
+			System.out.println("Message text: " + messageElement.getText());
+			System.out.println("validation msg: " +mobile_duplicacy.getText());
+		} else {
+			System.out.println("Message element not found.");
 		}
 
-		public void EditVendor_MobileformatValidations() throws InterruptedException {
-			editIcon.click();
-			vendorMobile.clear();
-			vendorMobile.sendKeys("90651234");
-			FWUtils.scrollDown();
-			submitBtn.click();
-			System.out.println("Mobile Validation Message for less than 10 digits :"+ vendorMobile_error.getText());
-			System.out.println("warning for duplicacy:"+ vMobile_duplicate.getText());
-			vendorMobile.clear();
-			Thread.sleep(500);
-			vendorMobile.sendKeys("9876543211234569");
-			submitBtn.click();
-			System.out.println("Mobile Validation Message for More than 13 digits"+ vendorMobile_error.getText());
-			vendorMobile.clear();
-			Thread.sleep(500);
+
+	}
+
+	public void EditVendor_EmailformatValidation() throws InterruptedException {
+		editIcon.click();
+		vendorEmail.clear();
+		vendorEmail.sendKeys("sunita");
+		FWUtils.scrollDown();
+		submitBtn.click();
+		System.out.println("email format Validation Message :"+ vendorEmail_error.getText());
+	}
+
+	public void EditVendor_EmailDuplicacy() {
+		editIcon.click();
+		vendorEmail.clear();
+		vendorEmail.sendKeys("sunita.gautam@footprintseducation.in");
+		FWUtils.scrollDown();
+		submitBtn.click();
+		FWUtils.scrollUp();
+		WebElement emailDuplicacyMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-warning"))); // Replace with actual selector
+		System.out.println("Duplicacy Validation message of email no:" +emailDuplicacyMessage.getText());
+
+		// Use JavaScript to find the element
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement messageElement = (WebElement) js.executeScript("return document.querySelector('.alert-warning')");
+
+		if (messageElement != null) {
+			System.out.println("Message text: " + messageElement.getText());
+			System.out.println("validation msg: " +email_duplicacy.getText());
+
+		} else {
+			System.out.println("Message element not found.");
 		}
 
-		public void Editvendor_MobileDuplicacy() {
-			editIcon.click();
-			vendorMobile.clear();
-			vendorMobile.sendKeys("7503664514");
-			FWUtils.scrollDown();
-			submitBtn.click();
-			FWUtils.scrollUp();
-			WebElement mobileDuplicacyMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-warning"))); // Replace with actual selector
-			System.out.println("Duplicacy Validation message of mobile no:" +mobileDuplicacyMessage.getText());
+	}
 
-			// Use JavaScript to find the element
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			WebElement messageElement = (WebElement) js.executeScript("return document.querySelector('.alert-warning')");
-
-			if (messageElement != null) {
-				System.out.println("Message text: " + messageElement.getText());
-				System.out.println("validation msg: " +mobile_duplicacy.getText());
-			} else {
-				System.out.println("Message element not found.");
-			}
-			
-
-		}
-		
-		public void EditVendor_EmailformatValidation() throws InterruptedException {
-			editIcon.click();
-			vendorEmail.clear();
-			vendorEmail.sendKeys("sunita");
-			FWUtils.scrollDown();
-			submitBtn.click();
-			System.out.println("email format Validation Message :"+ vendorEmail_error.getText());
-		}
-		
-		public void EditVendor_EmailDuplicacy() {
-			editIcon.click();
-			vendorEmail.clear();
-			vendorEmail.sendKeys("sunita.gautam@footprintseducation.in");
-			FWUtils.scrollDown();
-			submitBtn.click();
-			FWUtils.scrollUp();
-			WebElement emailDuplicacyMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-warning"))); // Replace with actual selector
-			System.out.println("Duplicacy Validation message of email no:" +emailDuplicacyMessage.getText());
-
-			// Use JavaScript to find the element
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			WebElement messageElement = (WebElement) js.executeScript("return document.querySelector('.alert-warning')");
-
-			if (messageElement != null) {
-				System.out.println("Message text: " + messageElement.getText());
-				System.out.println("validation msg: " +email_duplicacy.getText());
-
-			} else {
-				System.out.println("Message element not found.");
-			}
-
-		}
-		
-		public void Editvendor_PANValidation() {
-			editIcon.click();
-			vPan.clear();
-			vPan.sendKeys("BWBPG63Q");
-			FWUtils.scrollDown();
-			submitBtn.click();
-			System.out.println("PAN Validation msg :"+vendorPan_error.getText());
-			}
+	public void Editvendor_PANValidation() {
+		editIcon.click();
+		vPan.clear();
+		vPan.sendKeys("BWBPG63Q");
+		FWUtils.scrollDown();
+		submitBtn.click();
+		System.out.println("PAN Validation msg :"+vendorPan_error.getText());
+	}
 
 }

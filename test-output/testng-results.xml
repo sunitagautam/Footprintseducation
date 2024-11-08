@@ -1,78 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[PassCount: 0]]>
+    </line>
+    <line>
+      <![CDATA[FailCount: 1]]>
+    </line>
   </reporter-output>
-  <suite started-at="2024-08-07T13:43:24 IST" name="Default suite" finished-at="2024-08-07T13:43:24 IST" duration-ms="94">
+  <suite started-at="2024-11-08T16:30:31 IST" name="Suite" finished-at="2024-11-08T16:30:59 IST" duration-ms="28504">
     <groups>
     </groups>
-    <test started-at="2024-08-07T13:43:24 IST" name="Default test" finished-at="2024-08-07T13:43:24 IST" duration-ms="94">
-      <class name="admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts">
-        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:24 IST" name="openBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1723018404870" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'sBrowser' is required by BeforeClass on method openBrowser but has not been marked @Optional or defined
-in C:\Users\SunitaGautam\AppData\Local\Temp\testng-eclipse-1288434905\testng-customsuite.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'sBrowser' is required by BeforeClass on method openBrowser but has not been marked @Optional or defined
-in C:\Users\SunitaGautam\AppData\Local\Temp\testng-eclipse-1288434905\testng-customsuite.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:270)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:358)
-at org.testng.internal.Parameters.createParameters(Parameters.java:700)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:168)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+    <test started-at="2024-11-08T16:30:31 IST" name="Test" finished-at="2024-11-08T16:30:59 IST" duration-ms="28504">
+      <class name="financialModuleTestScripts.CustomerRequestPageTestScripts">
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:31 IST" name="openBrowser" finished-at="2024-11-08T16:30:33 IST" duration-ms="2373" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method is-config="true" signature="openApplication()[pri:0, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:24 IST" name="openApplication" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1723018404914" status="SKIP">
+        <test-method is-config="true" signature="openApplication()[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:33 IST" name="openApplication" finished-at="2024-11-08T16:30:34 IST" duration-ms="569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openApplication -->
-        <test-method is-config="true" signature="OpenAdmisisonForm_Page()[pri:0, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:24 IST" name="OpenAdmisisonForm_Page" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1723018404917" status="SKIP">
+        <test-method is-config="true" signature="Login_CustomerRequestPage()[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:34 IST" name="Login_CustomerRequestPage" finished-at="2024-11-08T16:30:38 IST" duration-ms="3813" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OpenAdmisisonForm_Page -->
-        <test-method signature="AdmisionViaCenterSelection_SC_001_TC_003()[pri:1, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:24 IST" name="AdmisionViaCenterSelection_SC_001_TC_003" finished-at="2024-08-07T13:43:24 IST" duration-ms="0" status="SKIP">
-          <exception class="org.testng.TestNGException">
+        </test-method> <!-- Login_CustomerRequestPage -->
+        <test-method signature="CenterShift_SC_002_TC_002()[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:38 IST" name="CenterShift_SC_002_TC_002" finished-at="2024-11-08T16:30:59 IST" duration-ms="21604" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[
-Parameter 'sBrowser' is required by BeforeClass on method openBrowser but has not been marked @Optional or defined
-in C:\Users\SunitaGautam\AppData\Local\Temp\testng-eclipse-1288434905\testng-customsuite.xml]]>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //html//body//div[6]//div//div//div//div//div//div[2]//div//div[3]//div[8]//form//div[1]//div//div//input[1]' (tried for 20 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'sBrowser' is required by BeforeClass on method openBrowser but has not been marked @Optional or defined
-in C:\Users\SunitaGautam\AppData\Local\Temp\testng-eclipse-1288434905\testng-customsuite.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:270)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:358)
-at org.testng.internal.Parameters.createParameters(Parameters.java:700)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:168)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //html//body//div[6]//div//div//div//div//div//div[2]//div//div[3]//div[8]//form//div[1]//div//div//input[1]' (tried for 20 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at financialModule.CustomerRequestPage.CenterShift_ServiceRequest(CustomerRequestPage.java:127)
+at financialModuleTestScripts.CustomerRequestPageTestScripts.CenterShift_SC_002_TC_002(CustomerRequestPageTestScripts.java:32)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
@@ -89,25 +69,69 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//html//body//div[6]//div//div//div//div//div//div[2]//div//div[3]//div[8]//form//div[1]//div//div//input[1]"}
+  (Session info: chrome=130.0.6723.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53741cac5cc810ce0124e6123bd1415a, findElement {value=//html//body//div[6]//div//div//div//div//div//div[2]//div//div[3]//div[8]//form//div[1]//div//div//input[1], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\SUNITA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64250}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64250/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53741cac5cc810ce0124e6123bd1415a
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AdmisionViaCenterSelection_SC_001_TC_003 -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:24 IST" name="closeBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1723018404926" status="SKIP">
+        </test-method> <!-- CenterShift_SC_002_TC_002 -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:59 IST" name="closeBrowser" finished-at="2024-11-08T16:30:59 IST" duration-ms="118" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CenterShift_SC_002_TC_002 status=FAILURE method=CustomerRequestPageTestScripts.CenterShift_SC_002_TC_002()[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:24 IST" name="closeBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1723018404928" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:59 IST" name="tearDown" finished-at="2024-11-08T16:30:59 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="printReport()[pri:0, instance:admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts@7ef82753]" started-at="2024-08-07T13:43:25 IST" name="printReport" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1723018405084" status="SKIP">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="printReport()[pri:0, instance:financialModuleTestScripts.CustomerRequestPageTestScripts@17f62e33]" started-at="2024-11-08T16:30:59 IST" name="printReport" finished-at="2024-11-08T16:31:01 IST" duration-ms="1578" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[PassCount: 0]]>
+            </line>
+            <line>
+              <![CDATA[FailCount: 1]]>
+            </line>
           </reporter-output>
         </test-method> <!-- printReport -->
-      </class> <!-- admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- financialModuleTestScripts.CustomerRequestPageTestScripts -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
