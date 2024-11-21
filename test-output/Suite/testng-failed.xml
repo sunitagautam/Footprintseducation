@@ -4,17 +4,18 @@
   <parameter name="sBrowser" value="chrome"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="financialModuleTestScripts.CustomerRequestPageTestScripts">
+      <class name="financialModuleTestScripts.OneTimeChargesPageTestScripts">
         <methods>
+          <include name="ChargeType_WelcomeKit_withROS"/>
           <include name="printReport"/>
           <include name="tearDown"/>
           <include name="openBrowser"/>
-          <include name="CenterShift_SC_002_TC_002"/>
-          <include name="Login_CustomerRequestPage"/>
           <include name="openApplication"/>
+          <include name="ChargeType_WecomeKit_withoutROS"/>
           <include name="closeBrowser"/>
+          <include name="Login_OpenOneTimeChargePage"/>
         </methods>
-      </class> <!-- financialModuleTestScripts.CustomerRequestPageTestScripts -->
+      </class> <!-- financialModuleTestScripts.OneTimeChargesPageTestScripts -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

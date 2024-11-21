@@ -3,17 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts">
+      <class name="financialModuleTestScripts.OneTimeChargesPageTestScripts">
         <methods>
+          <include name="ChargeType_WelcomeKit_withROS"/>
           <include name="printReport"/>
-          <include name="OpenAdmisisonForm_Page"/>
+          <include name="tearDown"/>
           <include name="openBrowser"/>
           <include name="openApplication"/>
-          <include name="AdmisionViaCenterSelection_SC_001_TC_003"/>
+          <include name="ChargeType_WelcomeKit"/>
+          <include name="ChargeType_WecomeKit_withoutROS"/>
           <include name="closeBrowser"/>
-          <include name="closeBrowser"/>
+          <include name="Login_OpenOneTimeChargePage"/>
         </methods>
-      </class> <!-- admission_onlineFormModuleTestScripts.Admission_onlineFormTestScripts -->
+      </class> <!-- financialModuleTestScripts.OneTimeChargesPageTestScripts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

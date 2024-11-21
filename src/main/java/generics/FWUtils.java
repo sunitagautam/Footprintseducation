@@ -203,7 +203,10 @@ public class FWUtils extends BaseTest {
 
 	    return flag;
 	}
-
+	public static void keepSessionAlive() {
+	    driver.navigate().refresh(); // Refresh the page to maintain session
+	    System.out.println("Session refreshed to stay active.");
+	}
 
 	
 
