@@ -11,11 +11,10 @@ import onboarding.ProfileMenuPage;
 
 public class OneTimeChargesPageTestScripts extends BaseTest{
 
-	@BeforeMethod
-	public void Login_OpenOneTimeChargePage() throws InterruptedException {
-		LoginPage lp= new LoginPage(driver);
-		lp.login_admin();
-		Thread.sleep(500);
+		@BeforeMethod
+	public void OpenOneTimeChargePage() throws InterruptedException {
+			LoginPage lp= new LoginPage(driver);
+			lp.login_admin();
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.OpenOneTimeChargesPage();
 		String pageURL = driver.getCurrentUrl();
@@ -28,38 +27,35 @@ public class OneTimeChargesPageTestScripts extends BaseTest{
 	public void ChargeType_AnnualFee() throws InterruptedException{
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.AnnualPreSchoolFee_charge();
-		ProfileMenuPage profile = new ProfileMenuPage(driver);
-		profile.logOutFun();
 	}
-	@Test(priority =2, enabled =false)
+	@Test(priority =2)
 	public void ChargeType_Apron() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.Apron_charge();	
-		ProfileMenuPage profile = new ProfileMenuPage(driver);
-		profile.logOutFun();
+		
 	}
-	@Test(priority =3, enabled =false)
+	@Test(priority =3)
 	public void ChargeType_BookSet() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.BookSet_charge();	  
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority =4,enabled =false)
+	@Test(priority =4)
 	public void ChargeType_CourierCharge() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.Courier_charge();  
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority =5, enabled =false)
+	@Test(priority =5)
 	public void ChargeType_ExtendedDayCare() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.Courier_charge();	
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority=6, enabled =false)
+	@Test(priority=6)
 	public void ChargeType_lateStay() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.LateStay_charge();
@@ -67,42 +63,42 @@ public class OneTimeChargesPageTestScripts extends BaseTest{
 		profile.logOutFun();
 	}
 
-	@Test(priority=7,enabled =false)
+	@Test(priority=7)
 	public void ChargeType_ReadOStick() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.ReadOStick_charge();
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority=8, enabled =false)
+	@Test(priority=8)
 	public void ChargeType_RegistrationFee() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.RegistrationFee_charge();
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority=9, enabled =false)
+	@Test(priority=9)
 	public void ChargeType_SchoolBag() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.SchoolBag_charge();
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority=10, enabled =false)
+	@Test(priority=10)
 	public void ChargeType_SecurityFee() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.SecurityFee_charge();
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority=11, enabled=false)
+	@Test(priority=11)
 	public void ChargeType_TransportFee() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.TransportFee_charge();
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
 		profile.logOutFun();
 	}
-	@Test(priority=12, enabled =false)
+	@Test(priority=12)
 	public void ChargeType_TuitionFee() throws InterruptedException {
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.TuitionFee_charge();
@@ -114,7 +110,7 @@ public class OneTimeChargesPageTestScripts extends BaseTest{
 		OneTimeChargesPage charges = new OneTimeChargesPage(driver);
 		charges.WelcomeKit_charge();
 		ProfileMenuPage profile = new ProfileMenuPage(driver);
-		profile.logOutFun();
+	profile.logOutFun();
 	}
 	@Test(priority=14)
 	public void ChargeType_WecomeKit_withoutROS() throws InterruptedException {

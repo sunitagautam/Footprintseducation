@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import onboarding.LoginPage;
 
 abstract public class BaseTest implements IAutoConstant {
     
@@ -39,6 +40,7 @@ abstract public class BaseTest implements IAutoConstant {
     @BeforeMethod
     public void openApplication() {
         driver.get(URL);
+        
     }
 
     @AfterMethod
@@ -57,7 +59,8 @@ abstract public class BaseTest implements IAutoConstant {
     @AfterClass
     public void tearDown() {
       //  if (driver != null) {
-        //    driver.quit();  // Use quit instead of close to ensure all windows are closed
+        driver.quit();  // Use quit instead of close to ensure all windows are closed
+          //driver.close();
        // }
     }
 

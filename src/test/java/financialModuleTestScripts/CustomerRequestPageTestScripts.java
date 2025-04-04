@@ -25,7 +25,7 @@ public class CustomerRequestPageTestScripts extends BaseTest {
 		System.out.println("title of the page is:" +pageTitle);	
 	}
 
-	@Test (priority=0)
+	@Test (priority=0, enabled=false)
 	public void CenterShift_SC_002_TC_002() throws InterruptedException
 	{	
 		CustomerRequestPage cr =new CustomerRequestPage(driver);
@@ -37,8 +37,28 @@ public class CustomerRequestPageTestScripts extends BaseTest {
 		//ProfileMenuPage profile = new ProfileMenuPage(driver);
 		//profile.logOutFun();		
 	}	
+	@Test (priority=1)
+	public void Pause_SC_003_TC_002() throws InterruptedException
+	{	
+		CustomerRequestPage cr =new CustomerRequestPage(driver);
+		cr.pause_Request();	
+		Thread.sleep(500);
+		cr.Open_CustomerRequestPage();
+		cr.printALL_TableData_LatestRequest();
+		//ProfileMenuPage profile = new ProfileMenuPage(driver);
+		//profile.logOutFun();		
+	}
+	
+	@Test (priority=2,enabled=false)
+	public void Pause_LeaveExtendRequest() throws InterruptedException
+	{	
+		CustomerRequestPage cr =new CustomerRequestPage(driver);
+		cr.pause_LeaveExtendRequest();
+		Thread.sleep(500);
+			
+	}
 
-	@Test(priority =1, enabled=false)
+	@Test(priority =10, enabled=false)
 	public void TimeExtension_Start_SC_001_TC_002() {
 		CustomerRequestPage cr =new CustomerRequestPage(driver);
 		cr.StartTimeExtension_ServiceRequest();	

@@ -28,7 +28,7 @@ public class CustomerRequestPage extends BaseTest{
 	//Center Shift *************************************************************************
 	@FindBy(xpath="//*[@id='send_request']/option[2]")
 	WebElement service_centerShift;
-	@FindBy(xpath="//html//body//div[6]//div//div//div//div//div//div[2]//div//div[3]//div[8]//form//div[1]//div//div//input[1]")
+	@FindBy(xpath="//div[@class='calendar']//input[@type='date']")
 	WebElement oldCenterAttritionDate_calendar;
     @FindBy(xpath="//div//div[3]//div[8]//form//div[1]//div//div/div//div//div//div//div//table//tbody//tr[3]//td[2]")
 	WebElement oldCenterAttritionDate_Selected;
@@ -46,7 +46,7 @@ public class CustomerRequestPage extends BaseTest{
 	WebElement programSelected_fullDay;
 	@FindBy(xpath="//*[@id='frm-center-shift']//div[4]//div[3]")
 	WebElement centerShift_notes;
-	@FindBy(css=".btn btn-primary btn-service center-shift")
+	@FindBy(xpath="//html//body//div[7]//div//div//div//div//div//div[2]//div//div[3]//div[8]//form//div[5]//div//button")
 	WebElement submit_CenterShiftBtn;
 	
 	
@@ -54,6 +54,26 @@ public class CustomerRequestPage extends BaseTest{
 	// child pause *******************************************************************************
 	@FindBy(xpath="//*[@id='send_request']/option[4]")
 	WebElement service_childPause;
+	@FindBy(id="breakFrom")
+	WebElement from_Date;
+	@FindBy(xpath="//html//body//div[7]//div//div//div//div//div//div[2]//div//div[3]//div[5]//*[@id='breakFrom_table']/tbody/tr[4]/td[3]/div[contains(text(),'24')]")
+	WebElement today;
+	@FindBy(id="breakTo")
+	WebElement to_Date;
+	@FindBy(xpath="//html//body//div[7]//div//div//div//div//div//div[2]//div//div[3]//div[5]//form//div[2]//div//div//div//div//div//div//div//div[1]//div[2][@class='picker__nav--next']")
+	WebElement next_arrow;
+	@FindBy(xpath="//*[@id='breakTo_table']//tbody//tr[5]//td[5]//div[text()='30']")
+	WebElement pause_Date;
+	@FindBy(id="pause_reason")
+	WebElement reason;
+	//@FindBy(className="btn btn-primary btn-service child-pause btn-lg")
+	@FindBy(xpath=" //html//body//div[7]//div//div//div//div//div//div[2]//div//div[3]//div[5]//form//div[4]//div//button")
+	WebElement submit_PauseBtn;
+	@FindBy(xpath="//*[@id='breakTo_table']//tbody//tr[3]//td[5]//div[text()='16']")
+	WebElement leave_Date;
+	@FindBy(xpath="//*[@id='popdown-dialog']//div//div//div//div//div[2]//div//div[3]//div[4]//div//i//b")
+	WebElement pause_note;
+
 	//program change*****************************************************
 	@FindBy(xpath="//*[@id='send_request']/option[5]")
 	WebElement service_programChange;
@@ -70,7 +90,7 @@ public class CustomerRequestPage extends BaseTest{
 	@FindBy(xpath="//html//body//div[6]//div//div//div//div//div//div[2]//div//div[3]//div[14]//form//div[3]//div//button[@id='add_request']")
 	WebElement submit_BtnTE;
 	//@FindBy(xpath="//div[@class='alert alert-success p-10']")
-	@FindBy(css=".alert alert-success p-10")
+	//@FindBy(css=".alert alert-success p-10")
 	WebElement successMsg_TE;
 	@FindBy(css=".icon-cancel-circle2 fa-2x")
 	WebElement closeIcon_Modal;
@@ -107,52 +127,55 @@ public class CustomerRequestPage extends BaseTest{
 				PageFactory.initElements(driver, this);
 			}
 			
+			public void switchToChildWindow() {
+			    String mainWindowHandle = driver.getWindowHandle();
+			    Set<String> allHandles = driver.getWindowHandles();
+			    for (String handle : allHandles) {
+			        if (!handle.equals(mainWindowHandle)) {
+			            driver.switchTo().window(handle);
+			            break;
+			        }
+			    }
+			}
+
 			//SC_002_TC_002 Service Requests
 			
 			public void CenterShift_ServiceRequest() {
 			    wait.until(ExpectedConditions.visibilityOf(ServiceRequest_Link));
-				ServiceRequest_Link.click();
-				String mainWindowHandle = driver.getWindowHandle();
-				Set<String> allHandles = driver.getWindowHandles();
-				for (String handle : allHandles) {
-				    if (!handle.equals(mainWindowHandle)) {
-				        driver.switchTo().window(handle);
-				        break;
-				    }
-				}
-				wait.until(ExpectedConditions.visibilityOf(selectServices_dropdown));
-				//selectServices_dropdown.click();
-				Select select = new Select(selectServices_dropdown);
-		        select.selectByVisibleText("Center Shift");
-				wait.until(ExpectedConditions.visibilityOf(oldCenterAttritionDate_calendar));
-				oldCenterAttritionDate_calendar.click();
-				oldCenterAttritionDate_Selected.click();
-				newCenterJoiningDate_calendar.click();
-				newCenterJoiningDate.click();
-				newCenter_dropdown.click();
-				newCenter_Selected.click();
-				newProgram_dropdown.click();
-				programSelected_fullDay.click();
-				System.out.println("CenterShift Note" +centerShift_notes.getText());
-				submit_CenterShiftBtn.click();
-				try {
-					// Switch to the alert
-					Alert confirmAlert = driver.switchTo().alert();
-					// Get the alert message (optional)
-					String confirmMessage = confirmAlert.getText();
-					System.out.println("Confirmation message: " + confirmMessage);
+			    ServiceRequest_Link.click();
 
-					confirmAlert.dismiss();	 // dismiss the confirmation (click "CANCEL")
-					Thread.sleep(500);
-					submit_CenterShiftBtn.click();
-					confirmAlert.accept(); // Accept the confirmation (click "OK")
-					//System.out.println("form Submission Msg:" +successMsg_TE.getText());
-					//closeIcon_Modal.click();
-				}
-				catch(Exception exp) {
-					System.out.println("I am inside catch block");
-					System.out.println("Message is :" +exp.getMessage());
-				}
+			    // Switch to the new window
+			    switchToChildWindow();
+
+			    wait.until(ExpectedConditions.visibilityOf(selectServices_dropdown));
+			    Select select = new Select(selectServices_dropdown);
+			    select.selectByVisibleText("Center Shift");
+
+			    wait.until(ExpectedConditions.visibilityOf(oldCenterAttritionDate_calendar));
+			    oldCenterAttritionDate_calendar.click();
+			    oldCenterAttritionDate_Selected.click();
+
+			    newCenterJoiningDate_calendar.click();
+			    newCenterJoiningDate.click();
+
+			    newCenter_dropdown.click();
+			    newCenter_Selected.click();
+
+			    newProgram_dropdown.click();
+			    programSelected_fullDay.click();
+
+			    System.out.println("CenterShift Note: " + centerShift_notes.getText());
+			    submit_CenterShiftBtn.click();
+
+			    // Handle the alert more efficiently
+			    try {
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			        Alert confirmAlert = wait.until(ExpectedConditions.alertIsPresent());
+			        System.out.println("Confirmation message: " + confirmAlert.getText());
+			        confirmAlert.accept();
+			    } catch (Exception exp) {
+			        System.out.println("Error handling alert: " + exp.getMessage());
+			    }
 			}
 			
 			public void StartTimeExtension_ServiceRequest() {
@@ -223,4 +246,86 @@ public class CustomerRequestPage extends BaseTest{
 			{
 				driver.get(Processing_Parent_Request);	
 			}
+	//-----------------------SC_003_TC_002---------------------------------------------------------	
+			
+			public void pause_Request() {
+				
+				 wait.until(ExpectedConditions.visibilityOf(ServiceRequest_Link));
+					ServiceRequest_Link.click();
+					 // Switch to the new window
+				    switchToChildWindow();
+				    
+					wait.until(ExpectedConditions.visibilityOf(selectServices_dropdown));
+					//selectServices_dropdown.click();
+					Select select = new Select(selectServices_dropdown);
+			        select.selectByVisibleText("Child Pause");
+					wait.until(ExpectedConditions.visibilityOf(from_Date));
+					from_Date.click();
+					today.click();
+					to_Date.click();
+					next_arrow.click();;
+					pause_Date.click();
+					reason.sendKeys("out of town");
+					System.out.println("Pause Note" +pause_note.getText());
+					submit_PauseBtn.click();
+					try {
+						// Switch to the alert
+						Alert confirmAlert = driver.switchTo().alert();
+						// Get the alert message (optional)
+						String confirmMessage = confirmAlert.getText();
+						System.out.println("Confirmation message: " + confirmMessage);
+
+						confirmAlert.dismiss();	 // dismiss the confirmation (click "CANCEL")
+						Thread.sleep(500);
+						submit_PauseBtn.click();
+						confirmAlert.accept(); // Accept the confirmation (click "OK")
+						//System.out.println("form Submission Msg:" +successMsg_TE.getText());
+						//closeIcon_Modal.click();
+					}
+					catch(Exception exp) {
+						System.out.println("I am inside catch block");
+						System.out.println("Message is :" +exp.getMessage());
+					}
+				
+			}
+			
+			public void pause_LeaveExtendRequest() {
+				
+				 wait.until(ExpectedConditions.visibilityOf(ServiceRequest_Link));
+					ServiceRequest_Link.click();
+				    switchToChildWindow();
+					wait.until(ExpectedConditions.visibilityOf(selectServices_dropdown));
+					Select select = new Select(selectServices_dropdown);
+			        select.selectByVisibleText("Child Pause");
+					from_Date.click();
+					today.click();
+					to_Date.click();
+					next_arrow.click();;
+					leave_Date.click();
+					reason.sendKeys("out of town");
+					System.out.println("Pause Note" +pause_note.getText());
+					submit_PauseBtn.click();
+					try {
+						// Switch to the alert
+						Alert confirmAlert = driver.switchTo().alert();
+						// Get the alert message (optional)
+						String confirmMessage = confirmAlert.getText();
+						System.out.println("Confirmation message: " + confirmMessage);
+
+						confirmAlert.dismiss();	 // dismiss the confirmation (click "CANCEL")
+						Thread.sleep(500);
+						submit_PauseBtn.click();
+						confirmAlert.accept(); // Accept the confirmation (click "OK")
+						
+					}
+					catch(Exception exp) {
+						System.out.println("I am inside catch block");
+						System.out.println("Message is :" +exp.getMessage());
+					}
+					Open_CustomerRequestPage();
+					printALL_TableData_LatestRequest();
+					
+				
+			}
+			
 }

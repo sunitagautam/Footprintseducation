@@ -15,8 +15,6 @@ public class ProfileMenuPageTestCases extends BaseTest{
 		LoginPage lp= new LoginPage(driver);
 		lp.login_admin();
 		Thread.sleep(500);
-		ProfileMenuPage profile = new ProfileMenuPage(driver);
-		profile.openMyProfile_page();
 		String pageURL = driver.getCurrentUrl();
 		System.out.println("URL of the page is:" +pageURL);	
 		String pageTitle = driver.getTitle();
