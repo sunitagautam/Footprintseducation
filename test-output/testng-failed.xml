@@ -6,12 +6,12 @@
     <classes>
       <class name="corporateTiepupModuleTestScripts.AccountStatement_CorporateTestScripts">
         <methods>
+          <include name="CorporateTransfer"/>
           <include name="printReport"/>
           <include name="Login_AccountStatementCorporateFuns"/>
           <include name="tearDown"/>
           <include name="openBrowser"/>
           <include name="openApplication"/>
-          <include name="TieupProgramChange_fun"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- corporateTiepupModuleTestScripts.AccountStatement_CorporateTestScripts -->

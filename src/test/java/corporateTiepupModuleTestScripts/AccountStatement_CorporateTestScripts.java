@@ -22,10 +22,16 @@ public class AccountStatement_CorporateTestScripts extends BaseTest {
 		System.out.println("title of the page is:" +pageTitle);	
 	}
 	
-	@Test(priority=0)
+	@Test(priority=0, enabled =false)
 	public void TieupProgramChange_fun() throws InterruptedException {
 		AccountStatement_CorporateFun aCorporate = new AccountStatement_CorporateFun(driver);
 		aCorporate.TieUp_ProgramChangeFun();
+		
+	}
+	@Test(priority=1)
+	public void CorporateTransfer() throws InterruptedException {
+		AccountStatement_CorporateFun aCorporate = new AccountStatement_CorporateFun(driver);
+		aCorporate.CoporateTransfer_fun();
 		
 	}
 

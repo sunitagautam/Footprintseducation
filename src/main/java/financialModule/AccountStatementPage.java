@@ -20,7 +20,8 @@ public class AccountStatementPage extends BaseTest {
 
 		@FindBy(xpath = "//*[@id='navbar-second-toggle']/ul/li[8]/a[text()='Support']")
 		WebElement SupportModule;
-		@FindBy(xpath ="//*[@id='navbar-second-toggle']//ul//li[8]//div//div[1]//div//div[1]//ul//li[1]//a[text()='Account Statement']")
+		@FindBy(xpath ="//*[@id='navbar-second-to"
+				+ "ggle']//ul//li[8]//div//div[1]//div//div[1]//ul//li[1]//a[text()='Account Statement']")
 		WebElement accountStatement_tag;
 		@FindBy(name="child_id")
 		WebElement admissionID;
@@ -127,6 +128,7 @@ public class AccountStatementPage extends BaseTest {
 		 
 		 //Child Plan link FUnctionality**************************************
 		 public void childPlan_linkfun() {
+			 
 			 childPlan_link.click();
 			 List<WebElement> tRows = driver.findElements(By.tagName("tr"));
 				int countRows = tRows.size();
